@@ -1,0 +1,7 @@
+<h1>글 보기</h1>
+<p>제목 : <%= @post.title %></p>
+<p><img src="<%= @post.avatar %>"></p>
+<p>내용 : <%= @post.content %></p>
+
+<a href="/posts/edit/<%= @post.id %>">[수정]</a>
+<%= link_to "[삭제]", "/posts/destroy/#{@post.id}", data: {method: "post", confirm: "진짜 삭제할거에여?"} %>

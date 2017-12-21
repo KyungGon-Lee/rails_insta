@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <a class="navbar-brand" href="/">인스타그램</a>
+  <%= link_to("인스타그램", "/" ) %>
+  <%= link_to "인스타그램", "/" %>
+  <%= link_to "루트 패스", root_path %>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <% if current_user %>
+        <span class="navbar-text"><%= current_user.email %></span>
+        <%= link_to "로그아웃", "/logout" %>
+      <% else %>
+        <%= link_to "로그인", "/login" %>
+        <%= link_to "회원가입", "/signup" %>
+      <% end %>
+  </nav>
+</nav>
+
+<% if flash[:notice] %>
+  <div class="alert alert-primary" role="alert"><%= flash[:notice] %></div>
+<% elsif flash[:alert ]%>
+  <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+<% end %>
